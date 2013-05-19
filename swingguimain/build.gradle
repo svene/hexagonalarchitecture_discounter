@@ -1,3 +1,4 @@
 dependencies {
     compile project(':swinggui')
+    compile project(':usecases_secondary_adapters')
 }

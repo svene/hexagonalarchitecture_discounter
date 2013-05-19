@@ -1,4 +1,4 @@
 dependencies {
     compile 'com.miglayout:miglayout:3.7.4'
-    compile project(':usecases')
+    compile project(':usecases_secondary_ports')
 }
