@@ -25,8 +25,8 @@ public class ApplicationFrame {
         );
         result.setLayout(ml);
 
-        TextField tf = new TextField("100", 10);
-        Label label = new Label("0.00");
+        final TextField tf = new TextField("100", 10);
+        final Label label = new Label("0.00");
         label.setSize(50, label.getHeight());
         JButton button = new JButton("calc discount");
 

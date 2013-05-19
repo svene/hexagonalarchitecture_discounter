@@ -1,0 +1,3 @@
+dependencies {
+    compile project(':usecases_secondary_ports')
+}
