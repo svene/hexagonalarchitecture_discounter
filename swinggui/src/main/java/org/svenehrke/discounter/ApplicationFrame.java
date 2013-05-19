@@ -8,6 +8,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ApplicationFrame {
+
+    private final IDiscounterSecondaryPort discounter;
+
+    public ApplicationFrame(IDiscounterSecondaryPort discounter) {
+        this.discounter = discounter;
+    }
+
     public JFrame newComponent() {
         JFrame result = new JFrame("Discount Calculator");
         result.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,7 +34,7 @@ public class ApplicationFrame {
             public void actionPerformed(ActionEvent e) {
                 String amountStr = tf.getText();
                 double amount = Double.parseDouble(amountStr);
-                double discount = new DiscounterSecondaryAdapter().calculatedDiscount(amount);
+                double discount = discounter.calculatedDiscount(amount);
                 label.setText(String.valueOf(discount));
             }
         };
