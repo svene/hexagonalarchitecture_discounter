@@ -2,8 +2,12 @@ package org.svenehrke.discounter;
 
 public class Main {
 	public static void main(String[] args) {
-		// Get real Plugins (secondary adapters):
-		IDiscounterSecondaryPort discounter = new DiscounterSecondaryAdapter();
+		// Get real Plugin (secondary adapter / SPI Implementation):
+		IDiscounterSecondaryPort secondaryPort = new DiscounterSecondaryAdapter();
+
+		// Get real primary adapter / API Implementation):
+		IDiscounterPrimaryPort discounter = new DiscounterPrimaryPort(secondaryPort);
+
 		// ..., inject them and start Application:
 		new SwingGuiStarter(discounter).start();
 	}

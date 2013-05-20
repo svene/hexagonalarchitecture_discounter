@@ -7,7 +7,7 @@ class DiscounterSecondaryPortSpec extends spock.lang.Specification {
         IDiscounterSecondaryPort discounter = new DiscounterSecondaryAdapter()
 
         expect:
-        discounter.calculatedDiscount(amount) == discount
+        discounter.calculatedDiscountSPI(amount) == discount
 
         where:
         amount     | discount

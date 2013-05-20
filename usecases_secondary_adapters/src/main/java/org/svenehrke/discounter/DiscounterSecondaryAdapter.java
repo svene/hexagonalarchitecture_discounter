@@ -2,7 +2,7 @@ package org.svenehrke.discounter;
 
 public class DiscounterSecondaryAdapter implements IDiscounterSecondaryPort {
     @Override
-    public double calculatedDiscount(double amount) {
+    public double calculatedDiscountSPI(double amount) {
         return amount * rate(amount);
     }
 

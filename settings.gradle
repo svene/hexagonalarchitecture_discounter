@@ -1,5 +1,7 @@
 include 'entities'
+include 'usecases_primary_ports'
 include 'usecases_secondary_ports'
 include 'usecases_secondary_adapters'
+include 'usecases'
 include 'swinggui_primary_adapters'
 include 'swingguimain'

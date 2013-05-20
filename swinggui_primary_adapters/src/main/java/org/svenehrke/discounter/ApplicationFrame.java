@@ -9,10 +9,10 @@ import java.awt.event.ActionListener;
 
 public class ApplicationFrame {
 
-    private final IDiscounterSecondaryPort discounter;
+    private final IDiscounterPrimaryPort discounterApi;
 
-    public ApplicationFrame(IDiscounterSecondaryPort discounter) {
-        this.discounter = discounter;
+    public ApplicationFrame(IDiscounterPrimaryPort discounterApi) {
+        this.discounterApi = discounterApi;
     }
 
     public JFrame newComponent() {
@@ -34,7 +34,7 @@ public class ApplicationFrame {
             public void actionPerformed(ActionEvent e) {
                 String amountStr = tf.getText();
                 double amount = Double.parseDouble(amountStr);
-                double discount = discounter.calculatedDiscount(amount);
+                double discount = discounterApi.calculatedDiscountAPI(amount);
                 label.setText(String.valueOf(discount));
             }
         };

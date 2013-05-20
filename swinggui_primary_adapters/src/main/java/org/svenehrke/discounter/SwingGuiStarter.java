@@ -5,16 +5,16 @@ import java.awt.*;
 
 public class SwingGuiStarter {
 
-	private final IDiscounterSecondaryPort discounter;
+	private final IDiscounterPrimaryPort discounterApi;
 
-	public SwingGuiStarter(final IDiscounterSecondaryPort discounter) {
-		this.discounter = discounter;
+	public SwingGuiStarter(final IDiscounterPrimaryPort discounterApi) {
+		this.discounterApi = discounterApi;
 	}
 
 	public void start() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				JFrame frame = new ApplicationFrame(discounter).newComponent();
+				JFrame frame = new ApplicationFrame(discounterApi).newComponent();
 			}
 		});
 	}
