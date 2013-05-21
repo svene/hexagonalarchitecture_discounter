@@ -1,0 +1,7 @@
+dependencies {
+	testCompile project(':usecases')
+	testCompile project(':usecases_primary_ports')
+	testCompile project(':usecases_secondary_ports')
+	testCompile project(':usecases_secondary_adapters')
+	testCompile project(':swinggui_primary_adapters')
+}

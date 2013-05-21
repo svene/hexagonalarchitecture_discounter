@@ -1,10 +1,10 @@
 package org.svenehrke.discounter;
 
-public class DiscounterPrimaryPort implements IDiscounterPrimaryPort {
+class DiscounterPrimaryPort implements IDiscounterPrimaryPort {
 
 	private final IDiscounterSecondaryPort discounterSecondaryPort;
 
-	public DiscounterPrimaryPort(final IDiscounterSecondaryPort discounterSecondaryPort) {
+	DiscounterPrimaryPort(final IDiscounterSecondaryPort discounterSecondaryPort) {
 		this.discounterSecondaryPort = discounterSecondaryPort;
 	}
 
