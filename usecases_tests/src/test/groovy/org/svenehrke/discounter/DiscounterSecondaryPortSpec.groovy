@@ -5,7 +5,7 @@ class DiscounterSecondaryPortSpec extends spock.lang.Specification {
     def "test discount"() {
         given:
 		// Get real Plugin (secondary adapter / SPI Implementation):
-		IDiscounterSecondaryPort secondaryPort = new DiscounterSecondaryAdapter();
+		IRateProviderSecondaryPort secondaryPort = RateProviderSecondaryAdapterFactory.newInstance();
 
 		// Get real primary adapter / API Implementation):
 		IDiscounterPrimaryPort discounter = DiscounterPrimaryPortFactory.newInstance(secondaryPort);

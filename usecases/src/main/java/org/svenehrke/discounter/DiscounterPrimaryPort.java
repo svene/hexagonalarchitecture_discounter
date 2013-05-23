@@ -2,14 +2,15 @@ package org.svenehrke.discounter;
 
 class DiscounterPrimaryPort implements IDiscounterPrimaryPort {
 
-	private final IDiscounterSecondaryPort discounterSecondaryPort;
+	private final IRateProviderSecondaryPort rateProviderSecondaryPort;
 
-	DiscounterPrimaryPort(final IDiscounterSecondaryPort discounterSecondaryPort) {
-		this.discounterSecondaryPort = discounterSecondaryPort;
+	DiscounterPrimaryPort(final IRateProviderSecondaryPort rateProviderSecondaryPort) {
+		this.rateProviderSecondaryPort = rateProviderSecondaryPort;
 	}
 
 	@Override
 	public double calculatedDiscountAPI(final double amount) {
-		return discounterSecondaryPort.calculatedDiscountSPI(amount);
+		return amount * rateProviderSecondaryPort.getRate(amount);
 	}
+
 }
