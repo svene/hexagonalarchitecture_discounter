@@ -7,8 +7,9 @@ public class Main {
 
 		// Get real primary adapter / API Implementation):
 		IDiscounterPrimaryPort discounter = DiscounterPrimaryPortFactory.newInstance(secondaryPort);
+		IDiscounterAdapter adapter = new DiscounterAdapter(discounter);
 
 		// ..., inject them and start Application:
-		new SwingGuiStarter(discounter).start();
+		new SwingGuiStarter(adapter).start();
 	}
 }
