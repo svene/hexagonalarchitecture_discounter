@@ -1,5 +1,7 @@
 package org.svenehrke.discounter;
 
+import java.math.BigDecimal;
+
 public class DiscounterAdapter implements IDiscounterAdapter {
 	private final IDiscounterPrimaryPort discounterApi;
 
@@ -9,8 +11,8 @@ public class DiscounterAdapter implements IDiscounterAdapter {
 
 	@Override
 	public String discountedAmount(final String input) {
-		double amount = Double.parseDouble(input);
-		double discount = discounterApi.calculatedDiscountAPI(amount);
+		BigDecimal amount = new BigDecimal(input);
+		BigDecimal discount = discounterApi.calculatedDiscountAPI(amount);
 		return String.valueOf(discount);
 	}
 }

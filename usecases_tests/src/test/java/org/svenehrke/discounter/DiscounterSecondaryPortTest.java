@@ -2,6 +2,8 @@ package org.svenehrke.discounter;
 
 import org.junit.Test;
 
+import java.math.BigDecimal;
+
 import static org.junit.Assert.assertEquals;
 
 public class DiscounterSecondaryPortTest {
@@ -13,8 +15,8 @@ public class DiscounterSecondaryPortTest {
 		// Get real primary adapter / API Implementation):
 		IDiscounterPrimaryPort discounter = DiscounterPrimaryPortFactory.newInstance(secondaryPort);
 
-		assertEquals("5.0", String.valueOf(discounter.calculatedDiscountAPI(100)));
-		assertEquals("10.0", String.valueOf(discounter.calculatedDiscountAPI(200)));
+		assertEquals("5.00", String.valueOf(discounter.calculatedDiscountAPI(new BigDecimal("100"))));
+		assertEquals("10.00", String.valueOf(discounter.calculatedDiscountAPI(new BigDecimal("200"))));
 
 	}
 }

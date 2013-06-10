@@ -1,5 +1,7 @@
 package org.svenehrke.discounter;
 
+import java.math.BigDecimal;
+
 public interface IDiscounterPrimaryPort {
-	double calculatedDiscountAPI(double amount);
+	BigDecimal calculatedDiscountAPI(BigDecimal amount);
 }

@@ -1,7 +1,9 @@
 package org.svenehrke.discounter;
 
+import java.math.BigDecimal;
+
 public interface IRateProviderSecondaryPort {
 
-    double getRate(double amount);
+    Rate getRate(BigDecimal amount);
 
 }

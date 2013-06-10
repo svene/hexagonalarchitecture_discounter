@@ -1,8 +1,10 @@
 package org.svenehrke.discounter;
 
+import java.math.BigDecimal;
+
 class RateProviderSecondaryAdapter implements IRateProviderSecondaryPort {
 	@Override
-	public double getRate(final double amount) {
-		return 0.05;
+	public Rate getRate(final BigDecimal amount) {
+		return new Rate(new BigDecimal("0.05"));
 	}
 }

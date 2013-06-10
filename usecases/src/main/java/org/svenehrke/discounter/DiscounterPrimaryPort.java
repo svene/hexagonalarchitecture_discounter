@@ -1,5 +1,7 @@
 package org.svenehrke.discounter;
 
+import java.math.BigDecimal;
+
 class DiscounterPrimaryPort implements IDiscounterPrimaryPort {
 
 	private final IRateProviderSecondaryPort rateProviderSecondaryPort;
@@ -9,8 +11,8 @@ class DiscounterPrimaryPort implements IDiscounterPrimaryPort {
 	}
 
 	@Override
-	public double calculatedDiscountAPI(final double amount) {
-		return amount * rateProviderSecondaryPort.getRate(amount);
+	public BigDecimal calculatedDiscountAPI(final BigDecimal amount) {
+		return amount.multiply(rateProviderSecondaryPort.getRate(amount).getValue());
 	}
 
 }

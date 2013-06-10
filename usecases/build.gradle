@@ -1,4 +1,5 @@
 dependencies {
+    compile project(':entities')
     compile project(':usecases_primary_ports')
     compile project(':usecases_secondary_ports')
 }
